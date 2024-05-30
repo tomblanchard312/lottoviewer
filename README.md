@@ -117,6 +117,6 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Contact
 
-Tom Blanchard - [mailto:tomblanchard312@gmail.com](tomblanchard312@gmail.com)
+Tom Blanchard - [tomblanchard312@gmail.com](tomblanchard312@gmail.com)
 
 Project Link: [https://github.com/tomblanchard312/lottoviewer](https://github.com/tomblanchard312/lottoviewer)
