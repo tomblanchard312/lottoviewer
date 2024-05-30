@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Typography, TextField } from '@mui/material';
 import { LocalizationProvider, DatePicker, PickersDay } from '@mui/x-date-pickers';
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import isSameDay from 'date-fns/isSameDay';
 import './App.css';
 import DataDisplay from './components/DataDisplay';
+import dayjs from 'dayjs';
 
 const App = () => {
     const [data, setData] = useState([]);
@@ -27,13 +28,13 @@ const App = () => {
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
-        const formattedDate = date.toISOString().split('T')[0];
+        const formattedDate = dayjs(date).format('YYYY-MM-DD');
         const filteredData = data.filter(item => item.draw_date.split('T')[0] === formattedDate);
         setFilteredData(filteredData);
     };
 
     const renderDatePickerDay = (date, selectedDate, pickersDayProps) => {
-        const isDrawDate = drawDates.some(drawDate => isSameDay(drawDate, date));
+        const isDrawDate = drawDates.some(drawDate => isSameDay(drawDate, date.toDate()));
         return (
             <PickersDay
                 {...pickersDayProps}
@@ -57,11 +58,11 @@ const App = () => {
     return (
         <div className="container">
             <header>
-          <h1>Mega Millions Number</h1>
-          <h3>Drawings Tuesdays and Fridays</h3>
+          <h1>Mega Millions Numbers</h1>
+          <h3>Pulled from NY Open Data</h3>
             </header>
             <section className="search">
-                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
                         label="Select Date"
                         value={selectedDate}
@@ -71,8 +72,8 @@ const App = () => {
                     />
                 </LocalizationProvider>
             </section>
-            <DataDisplay title="Latest Drawing" data={recentData} />
-            <DataDisplay title="Selected Drawing" data={filteredData} />
+            <DataDisplay title="Most Recent Data" data={recentData} />
+            <DataDisplay title="Search Results" data={filteredData} />
             <footer>
                 <Typography variant="body2" align="center" sx={{ marginTop: 4 }}>
                     Data sourced from <a href="https://data.ny.gov" target="_blank" rel="noopener noreferrer">data.ny.gov</a> using Creative Commons License.
