@@ -13,7 +13,7 @@
     "dayjs": "^1.11.11",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^4.0.1"
   },
   "scripts": {
@@ -44,5 +44,8 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
+  },
+  "resolutions": {
+    "nth-check": "2.0.1"
   }
 }
