@@ -58,7 +58,7 @@ const App = () => {
     return (
         <div className="container">
             <header>
-          <h1>Power Ball Numbers</h1>
+          <h1>Mega Millions Numbers</h1>
           <h3>Pulled from NY Open Data</h3>
             </header>
             <section className="search">
