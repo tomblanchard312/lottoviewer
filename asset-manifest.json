@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/lottoviewer/static/css/main.9a5db26a.css",
-    "main.js": "/lottoviewer/static/js/main.60ba7797.js",
+    "main.js": "/lottoviewer/static/js/main.a82cd02f.js",
     "index.html": "/lottoviewer/index.html",
     "main.9a5db26a.css.map": "/lottoviewer/static/css/main.9a5db26a.css.map",
-    "main.60ba7797.js.map": "/lottoviewer/static/js/main.60ba7797.js.map"
+    "main.a82cd02f.js.map": "/lottoviewer/static/js/main.a82cd02f.js.map"
   },
   "entrypoints": [
     "static/css/main.9a5db26a.css",
-    "static/js/main.60ba7797.js"
+    "static/js/main.a82cd02f.js"
   ]
 }
